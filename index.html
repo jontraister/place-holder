@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- If you’re looking for the online demo, it’s here: http://mathiasbynens.be/demo/placeholder -->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>HTML5 placeholder jQuery Plugin</title>
+		<style>
+			body, input, textarea { font: 1em/1.4 Helvetica, Arial; }
+			label code { cursor: pointer; float: left; width: 150px; }
+			input { width: 14em; display: block; float: none; }
+			textarea { height: 5em; width: 20em; }
+			.my-placeholder { color: #aaa; }
+			.note { border: 1px solid orange; padding: 1em; background: #ffffe0; }
+			/* #p { background: lime; } */
+		</style>
+	</head>
+	<body>
+		<h1>HTML5 Placeholder jQuery Plugin</h1>
+		<form>
+			<input type="text" name="name" placeholder="Last Name">
+			<input type="text" name="date" placeholder="Date of Birth">
+			<input type="text" id="ssn" name="tel" placeholder="Last for digits of SSN">
+			<label><input type="checkbox" id="check_box" name="nossn"> I don't have an SSN</label>
+			<p><input type="submit" value="type=submit"></p>
+		</form>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="jquery.placeholder.js"></script>
+		<script>
+			$(function() {
+			    $('#check_box').click(function() {
+			        if ($(this).is(':checked')) {
+			            $('#ssn').attr('disabled', 'disabled');
+			        } else {
+			            $('#ssn').removeAttr('disabled');
+			        }
+			    });
+			});
+		</script>
+	</body>
+</html>
